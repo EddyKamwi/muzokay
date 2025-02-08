@@ -1,0 +1,444 @@
+:root {
+    --prim: #212529;
+    --sec: #dee2e6;
+    --asset-1: #074198;
+    --asset-2: #9d789b;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: x-large;
+}
+
+header,
+main,
+footer {
+    margin: 0 auto;
+}
+
+.bars {
+    font-size: 2.5rem;
+    cursor: pointer;
+    grid-column: 9/10;
+    grid-row: 1/2;
+}
+
+header {
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    place-items: center;
+    padding: 1rem;
+}
+
+.brand {
+    grid-column: 2/5;
+    grid-row: 1/2;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1/11;
+    grid-row: 2/3;
+    padding: 0;
+    height: 0;
+    width: 100%;
+    gap: .5rem;
+    overflow: hidden;
+    transition: all 2s ease;
+    transform: scale(.8);
+}
+
+nav a {
+    text-transform: capitalize;
+    padding: .5rem;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    background-color: var(--prim);
+    color: #fff;
+    border: var(--prim) solid 1px;
+    border-radius: 5px;
+}
+
+.active,
+nav a:hover {
+    background-color: var(--sec);
+    color: var(--prim);
+}
+
+.hero {
+    background-image: url(../images/bg-hero.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    overflow: hidden;
+    height: 400px;
+}
+
+.heroImage {
+    grid-column: 4/11;
+    grid-row: 1/4;
+}
+
+.heroCard {
+    position: relative;
+    background-color: var(--sec);
+    color: var(--prim);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/6;
+    grid-row: 2/3;
+    z-index: 100;
+    opacity: .8;
+    border-radius: 5px;
+}
+
+.heroCard h1 {
+    font-size: 3rem;
+    padding: .5rem .8rem;
+    height: 8rem;
+}
+
+.heroCard p {
+    position: absolute;
+    font-size: .8rem;
+    background-color: var(--prim);
+    color: var(--sec);
+    padding: .2rem;
+    width: 60%;
+    margin-top: 3rem;
+    top: 4.5rem;
+    left: 20%;
+}
+
+.loan-card {
+    background-color: var(--prim);
+    padding: 2rem 2rem 5rem 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    transition: all 0.3s ease;
+    transform: scale(1);
+    will-change: transform, opacity;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.loan-card .form-group {
+    margin-bottom: 1rem;
+    margin: 1rem 0;
+}
+
+.loan-card label {
+    font-weight: bold;
+    margin-bottom: .9rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+
+}
+
+.loan-card select {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: var(--prim) solid 1px;
+}
+
+.loan-card button {
+    width: 100%;
+    padding: .5rem;
+    background-color: var(--asset-2);
+    color: var(--prim);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    margin-top: 1.3rem;
+}
+table{
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+table tr{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+thead tr:first-child{
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+tr:nth-child(even){
+    background-color: #eff1f4;
+}
+button:active {
+    transform: scale(.96);
+    transition: transform 0.2s ease;
+}
+
+.loan-card.form-group.error {
+    color: red;
+    font-size: .8rem;
+    margin-top: .5rem;
+}
+
+.loan-container{
+    height: 0;
+    overflow: hidden;
+    transition: height 5s ease;
+}
+.results {
+    color: green;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.loan-card.form-group.success.success-message {
+    display: block;
+}
+#table-title{
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.form-group .form-control {
+    width: 100%;
+    padding: .5rem 0 .5rem .43em;
+    border-radius: 5px;
+    border: var(--prim) solid 1px;
+}
+
+.services {
+    background: rgb(7, 52, 121);
+    background: linear-gradient(90deg, rgb(4, 51, 121) 0%, rgb(2, 26, 62) 29%, rgba(9, 47, 105, 1) 100%);
+    padding: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--sec);
+    margin: 2rem 0;
+}
+
+.items,
+.testimonies {
+    display: grid;
+    grid-template-columns: auto;
+    place-content: center;
+    gap: 2rem;
+}
+
+.serviceCard {
+    transition: all 1s ease;
+    position: relative;
+    max-width: 380px;
+    background-color: var(--sec);
+    padding: 5rem 1rem;
+    border-radius: 5px;
+    margin-top: 5rem;
+}
+
+.serviceCard:hover {
+    transform: scale(.9);
+    z-index: 1000;
+    cursor: pointer;
+    background-color: var(--prim);
+    color: var(--sec);
+}
+
+.serviceCard .title {
+    text-align: center;
+    width: 100%;
+    font-size: 1.9rem;
+    margin: 2rem auto;
+    text-transform: uppercase;
+    padding: 3rem 0;
+    border-bottom: rgba(9, 47, 105, .5) solid 1px;
+}
+
+.serviceCard:hover .title {
+    border-bottom: rgb(255, 255, 255) solid 1px;
+}
+
+.serviceCard .num {
+    display: grid;
+    place-content: center;
+    place-items: center;
+    position: absolute;
+    display: block;
+    text-align: center;
+    font-size: 4rem;
+    top: -3rem;
+    right: 40%;
+    font-weight: 600;
+    border-radius: 60%;
+    background-color: var(--sec);
+    padding: 20px;
+    color: #580303;
+    border: #4f0303 double 1px;
+
+}
+
+.serviceCard:hover .num {
+    background-color: var(--prim);
+    color: var(--sec);
+    border: var(--sec) solid 1px;
+
+}
+
+.serviceCard .body {
+    font-size: x-large;
+    text-align: center;
+}
+
+.testimonial-heading {
+    color: var(--prim);
+    margin-bottom: 5rem;
+
+}
+
+.testimonies {
+    padding: 2rem;
+    display: grid;
+    gap: 2rem;
+    transition: all 1s ease;
+}
+
+.testCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    place-content: center;
+    background: var(--asset-2);
+    margin-bottom: 9rem;
+}
+
+.testImage {
+    border: #fff solid 10px;
+    border-radius: 50%;
+    transform: scale(.6);
+    z-index: 1000;
+}
+
+.testBody {
+    text-align: center;
+    width: 100%;
+    background-color: #fff;
+    padding-top: 7rem;
+    position: absolute;
+    top: 12rem
+}
+
+.testName {
+    font-size: 2rem;
+    text-transform: capitalize;
+    border-bottom: rgb(33, 37, 41, .5) solid 2px;
+    padding: 1rem 0;
+}
+
+.testQuote::before {
+    content: "❛❛";
+    font-size: 3rem;
+}
+
+.testQuote {
+    margin: 1rem;
+    font-size: x-large;
+}
+
+.archive {
+    display: grid;
+    grid-template-columns: auto;
+    place-content: center;
+    place-items: center;
+    background-color: var(--asset-1);
+    padding: 5rem;
+    gap: 2rem;
+}
+
+.arcCard {
+    max-width: 480px;
+    padding: .6rem;
+}
+
+.arcCard p {
+    padding: 1rem;
+    ;
+}
+
+.arcHead {
+    margin: 2rem auto;
+    font-size: 3rem;
+}
+
+.arcBody {
+    text-align: center;
+    color: var(--sec);
+    padding: .3rem
+}
+
+.arcFoot {
+    display: block;
+    padding: 1rem .2rem;
+    margin: 1rem;
+    text-align: center;
+    color: var(--sec);
+    border-radius: 10px;
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.assets {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.assetCard,
+.assetCard-2,
+.assetCard-3 {
+    display: grid;
+    place-content: center;
+    align-items: center;
+    height: 480px;
+    width: 100%;
+    color: var(--sec)
+}
+
+.assetCard {
+    background-color: var(--prim);
+}
+
+.assetCard-2 {
+    background-color: var(--asset-1);
+}
+
+.assetCard-3 {
+    background-color: var(--prim);
+}
+
+svg path {
+    fill: var(--sec);
+}
+
+.footer {
+    padding: 1rem;
+    text-align: center;
+}
